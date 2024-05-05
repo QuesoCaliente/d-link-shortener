@@ -66,7 +66,7 @@ export async function POST(context: APIContext): Promise<Response> {
   console.log("7");
 
   try {
-    const newLink = await db.insert(Link).values([
+    await db.insert(Link).values([
       {
         short,
         original,

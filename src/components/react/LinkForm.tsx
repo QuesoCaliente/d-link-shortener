@@ -1,6 +1,5 @@
 import { seoConfig } from "@/utils/seoConfig";
 import { useState, type FC } from "react";
-import Button from "../ui/Button.astro";
 
 type Status =
   | { type: "none" | "progress" }
