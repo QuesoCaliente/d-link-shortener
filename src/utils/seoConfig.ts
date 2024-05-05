@@ -1,10 +1,10 @@
 export const seoConfig = {
-  baseURL: "http://localhost:4321/", // Production URL.
+  baseURL: "https://d-link-shortener.vercel.app/", // Production URL.
   description:
     "D-link es un acortador de enlaces que te permite acortar enlaces y compartirlos con tus amigos.",
   type: "website",
   image: {
-    url: "http://localhost:4321/og.jpg",
+    url: "https://d-link-shortener.vercel.app/og.jpg",
     alt: "DlinkShortener",
     width: 705,
     height: 606,
