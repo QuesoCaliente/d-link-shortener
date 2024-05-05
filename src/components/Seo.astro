@@ -1,0 +1,53 @@
+---
+import { seoConfig } from '@/utils/seoConfig'
+
+
+interface Props {
+	title: string
+	description: string
+	canonical?: string
+	image?: string
+}
+
+const {
+	title,
+	description,
+	canonical,
+	image = `${seoConfig.baseURL}og.jpg`,
+} = Astro.props
+
+
+const canonicalURL = canonical
+	? new URL(canonical, Astro.url.hostname)
+	: new URL(Astro.url.pathname, Astro.site)
+---
+
+<title>{title}</title>
+
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+<meta name="viewport" content="width=device-width" />
+<meta name="theme-color" content="#d5ff00" />
+
+<meta name="keywords" content="d-mai, shortener" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@quesocaliente0" />
+<meta name="twitter:creator" content="@quesocaliente0" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
+
+<meta name="og:image" content={new URL(image, Astro.url)} />
+<meta name="og:title" content={title} />
+<meta name="og:description" content={description} />
+<meta name="og:url" content={Astro.url} />
+<meta name="og:site_name" content="D-link Shortener" />
+<meta name="og:type" content="website" />
+<meta name="og:locale" content="es_ES" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="icon" type="image/png" href="/favicon.png" />

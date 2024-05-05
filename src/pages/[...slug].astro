@@ -1,0 +1,18 @@
+---
+import { Link, db, eq } from "astro:db";
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect("/");
+}
+
+const [link] = await db.select().from(Link).where(eq(Link.short, slug));
+
+if (!link) {
+  return Astro.redirect("/");
+}
+
+Astro.response.status = 301;
+Astro.response.headers.set("Location", link.original);
+---

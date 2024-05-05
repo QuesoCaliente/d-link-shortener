@@ -1,0 +1,26 @@
+---
+import SocialLink from './SocialLink.astro';
+
+interface Props {
+    socialLinks: {
+        name: string;
+        url: string;
+        icon: string;
+    }[];
+    }
+
+const { socialLinks } = Astro.props;
+
+---
+<div class="flex w-full items-center justify-center gap-2 p-4" >
+    {socialLinks.map((link) => (
+        <SocialLink {...link} />
+    ))}
+</div>
+
+
+<style>
+ div {
+    background-color: rgb(0 0 0 / 75%);
+ }
+</style>

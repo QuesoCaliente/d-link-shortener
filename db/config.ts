@@ -39,11 +39,28 @@ const Link = defineTable({
   },
 });
 
+const Traffic = defineTable({
+  columns: {
+    id: column.text({
+      primaryKey: true,
+    }),
+    short: column.text({
+      references: () => Link.columns.short,
+    }),
+    timestamp: column.date({ default: NOW }),
+    referer: column.text(),
+    userAgent: column.text(),
+    ipAddress: column.text({ optional: true }),
+    country: column.text({ optional: true }),
+  },
+});
+
 // https://astro.build/db/config
 export default defineDb({
   tables: {
     User,
     Session,
     Link,
+    Traffic,
   },
 });

@@ -1,70 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-const user = Astro.locals.user;
+import Layout from "@/layouts/Layout.astro";
+import {LinkForm} from "@/components/react/LinkForm";
+
+if (Astro.request.method === "POST") {
+    const formData = await Astro.request.formData();
+
+    const response = await fetch(`${Astro.url.origin}/api/link`, {
+        method: "POST",
+        body: formData,
+    });
+    if (response.ok) {
+        const data: {
+            url: string;
+            short: string;
+        
+        } = await response.json();
+        document.getElementById("shorturl")!.textContent = data.short;
+    }
+    
+}
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Hola {user?.username}</h1>
-	</main>
+<Layout
+title="D-link Shortener"
+description="D-link Shortener is a free tool to shorten a URL or reduce a link. Use our URL Shortener to create a shortened link making it easy to remember. Share the short link with others."
+
+>
+<main class="max-w-screen-xl sm:mx-auto my-20 mx-4">
+    <section class="hero">
+        <div class="container">
+        <div class="hero__content">
+            <h1 class="hero__title">D-link Shortener</h1>
+            <p class="hero__description">D-link Shortener is a free tool to shorten a URL or reduce a link. Use our URL Shortener to create a shortened link making it easy to remember. Share the short link with others.</p>
+            <LinkForm client:load />
+        </div>
+        </div>
+    </section>
+</main>
 </Layout>
 
+
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
+.hero {
+    @apply flex justify-center items-center w-full h-[80vh];
+}
+
+.hero__content {
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.hero__description {
+    font-size: 1.25rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+
+
 </style>

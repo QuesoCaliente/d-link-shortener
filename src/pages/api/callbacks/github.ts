@@ -55,6 +55,7 @@ export async function GET(context: APIContext): Promise<Response> {
         id: userId,
         github_id: githubUser.id,
         username: githubUser.login,
+        image: githubUser.avatar_url,
       },
     ]);
 
@@ -83,4 +84,5 @@ export async function GET(context: APIContext): Promise<Response> {
 interface GitHubUser {
   id: string;
   login: string;
+  avatar_url: string;
 }

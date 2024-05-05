@@ -1,0 +1,31 @@
+---
+import DropDownLink from './DropDownLink.astro';
+import DropDownTitle from './DropDownTitle.astro';
+
+interface Props {
+    minWidth?: string;
+    
+
+}
+const {minWidth = 'min-w-64'} = Astro.props;
+
+---
+
+
+<nav class={`dropdown min-w- ${minWidth}`} id="more">
+ <slot/>
+</nav>
+
+
+
+<style>
+    nav {
+        @apply shadow-elevation top-full left-auto z-30 right-4 p-6 bg-white origin-top-right absolute rounded-lg transition-all ease-drop-out duration-500;
+    }
+    .dropdown:not(.is-active) {
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(0, -1rem, 0) scale(.9);
+    }
+    
+    </style>

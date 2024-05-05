@@ -5,21 +5,23 @@ import { Argon2id } from "oslo/password";
 
 export async function POST(context: APIContext): Promise<Response> {
   const formData = await context.request.formData();
-  const username = formData.get("username");
   const email = formData.get("email");
   const password = formData.get("password");
 
-  if (!username && !email) {
+  if (!email) {
     return new Response("Missing username or email", { status: 400 });
   }
-  if (typeof username !== "string" || typeof email !== "string") {
+  if (typeof email !== "string") {
     return new Response("Invalid username or email", { status: 400 });
   }
   if (password && typeof password !== "string") {
     return new Response("Invalid password", { status: 400 });
   }
-
-  const [user] = await db.select().from(User).where(eq(User.email, email));
+  let user;
+  user = (await db.select().from(User).where(eq(User.email, email))).at(0);
+  if (!user) {
+    user = (await db.select().from(User).where(eq(User.username, email))).at(0);
+  }
 
   if (!user) {
     return new Response("Incorrect username or password", { status: 400 });
