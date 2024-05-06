@@ -45,4 +45,4 @@ D-link Shortener es una herramienta gratuita para acortar una URL. Utilice nuest
 
 4. Open your browser
 
-   [http://localhost:4321 🧀](http://localhost:5173)
+   [http://localhost:4321 🧀](http://localhost:4321)
