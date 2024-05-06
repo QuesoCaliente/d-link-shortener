@@ -1,54 +1,48 @@
-# Astro Starter Kit: Basics
+<div align="center">
 
-```sh
-npm create astro@latest -- --template basics
-```
+# D-link Shortener
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][fork-shield]][fork-url]
+[![Stargazers][stars-shield]][stars-url]
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+</div>
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+D-link Shortener es una herramienta gratuita para acortar una URL. Utilice nuestro acortador de URL para crear un enlace acortado que sea fácil de recordar. Comparta el enlace corto con otros.
 
-## 🚀 Project Structure
+## Screenshots
 
-Inside of your Astro project, you'll see the following folders and files:
+![ScreenShot 1 D-link](/screenshot01.png "Screenshot 1 D-link")
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+![ScreenShot 2 D-link](/screenshot02.png "Screenshot 2 D-link")
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+[contributors-shield]: https://img.shields.io/github/contributors/QuesoCaliente/d-link-shortener.svg?style=for-the-badge
+[contributors-url]: https://github.com/QuesoCaliente/d-link-shortener/graphs/contributors
+[fork-shield]: https://img.shields.io/github/forks/QuesoCaliente/d-link-shortener.svg?style=for-the-badge
+[fork-url]: https://github.com/QuesoCaliente/d-link-shortener/network/members
+[stars-shield]: https://img.shields.io/github/stars/QuesoCaliente/d-link-shortener.svg?style=for-the-badge
+[stars-url]: https://github.com/QuesoCaliente/d-link-shortener/stargazers
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Getting started
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. 🧀 clone or fork this repository
 
-## 🧞 Commands
+   ```sh
+   git clone https://github.com/QuesoCaliente/d-link-shortener.git
+   ```
 
-All commands are run from the root of the project, from a terminal:
+2. install dependencies
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+   ```bash
+   pnpm install
+   ```
 
-## 👀 Want to learn more?
+3. run the project
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+   ```bash
+   pnpm run dev
+   ```
+
+4. Open your browser
+
+   [http://localhost:5173 🧀](http://localhost:5173)
