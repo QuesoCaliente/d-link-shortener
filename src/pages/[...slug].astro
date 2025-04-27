@@ -1,4 +1,5 @@
 ---
+import { Traffic } from "astro:db";
 import { Link, db, eq } from "astro:db";
 
 const { slug } = Astro.params;
@@ -12,6 +13,17 @@ const [link] = await db.select().from(Link).where(eq(Link.short, slug));
 if (!link) {
   return Astro.redirect("/");
 }
+
+await db.insert(Traffic).values([
+  {
+    short: link.short,
+    ipAddress: Astro.request.headers.get("x-forwarded-for") || "",
+    userAgent: Astro.request.headers.get("user-agent") || "",
+    referer: Astro.request.headers.get("referer") || "",
+    country: Astro.request.headers.get("cf-ipcountry") || "",
+    timestamp: new Date(),
+  },
+]);
 
 Astro.response.status = 301;
 Astro.response.headers.set("Location", link.original);
