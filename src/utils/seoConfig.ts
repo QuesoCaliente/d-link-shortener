@@ -1,10 +1,10 @@
 export const seoConfig = {
-  baseURL: "https://d-link-shortener.vercel.app/", // Production URL.
+  baseURL: "https://www.uxly.foo/", // Production URL.
   description:
-    "D-link es un acortador de enlaces que te permite acortar enlaces y compartirlos con tus amigos.",
+    "Uxly es un acortador de enlaces que te permite acortar enlaces y compartirlos con tus amigos.",
   type: "website",
   image: {
-    url: "https://d-link-shortener.vercel.app/og.jpg",
+    url: "https://www.uxly.foo/og.jpg",
     alt: "DlinkShortener",
     width: 705,
     height: 606,
