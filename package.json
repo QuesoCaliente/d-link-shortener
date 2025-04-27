@@ -12,27 +12,27 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/db": "^0.14.12",
-    "@astrojs/react": "^3.3.2",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.5.4",
-    "@iconify-json/feather": "^1.1.8",
-    "@iconify-json/mdi": "^1.1.66",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
-    "arctic": "^1.8.0",
-    "astro": "^4.7.1",
-    "astro-icon": "^1.1.0",
-    "lucia": "^3.2.0",
+    "@astrojs/react": "^3.6.3",
+    "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/vercel": "^7.8.2",
+    "@iconify-json/feather": "^1.2.1",
+    "@iconify-json/mdi": "^1.2.3",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
+    "arctic": "^1.9.2",
+    "astro": "^4.16.18",
+    "astro-icon": "^1.1.5",
+    "lucia": "^3.2.2",
     "lucia-adapter-astrodb": "^0.0.8",
-    "nanoid": "^5.0.7",
-    "oslo": "^1.2.0",
+    "nanoid": "^5.1.5",
+    "oslo": "^1.2.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5",
-    "zod": "^3.23.6"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7"
+    "@tailwindcss/forms": "^0.5.10"
   }
 }
