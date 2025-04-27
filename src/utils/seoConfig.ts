@@ -9,7 +9,7 @@ export const seoConfig = {
     width: 705,
     height: 606,
   },
-  siteName: "D-link Shortener",
+  siteName: "UxLy",
   twitter: {
     card: "summary_large_image",
   },

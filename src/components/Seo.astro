@@ -1,23 +1,21 @@
 ---
-
 interface Props {
-	title: string
-	description: string
-	canonical?: string
-	image?: string
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
 }
 
 const {
-	title,
-	description,
-	canonical,
-	image = `${Astro.url}/og.jpg`,
-} = Astro.props
-
+  title,
+  description,
+  canonical,
+  image = `${Astro.url}/og.jpg`,
+} = Astro.props;
 
 const canonicalURL = canonical
-	? new URL(canonical, Astro.url.hostname)
-	: new URL(Astro.url.pathname, Astro.site)
+  ? new URL(canonical, Astro.url.hostname)
+  : new URL(Astro.url.pathname, Astro.site);
 ---
 
 <title>{title}</title>
@@ -41,7 +39,7 @@ const canonicalURL = canonical
 <meta name="og:title" content={title} />
 <meta name="og:description" content={description} />
 <meta name="og:url" content={Astro.url} />
-<meta name="og:site_name" content="D-link Shortener" />
+<meta name="og:site_name" content="Uxly" />
 <meta name="og:type" content="website" />
 <meta name="og:locale" content="es_ES" />
 

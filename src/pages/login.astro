@@ -3,98 +3,92 @@ import Button from "@/components/ui/Button.astro";
 import LayoutBlank from "@/layouts/LayoutBlank.astro";
 import { seoConfig } from "@/utils/seoConfig";
 import { Icon } from "astro-icon/components";
-
-
 ---
 
 <LayoutBlank
-title="Iniciar sesion"
-description="Iniciar sesion en la plataforma"
+  title="Iniciar sesion"
+  description="Iniciar sesion en la plataforma"
 >
-
-    <>
-<div class="py-6">
-  <div class="mx-auto flex max-w-sm overflow-hidden rounded-lg bg-white shadow-lg lg:max-w-4xl">
-    <div
-      class="hidden bg-cover lg:block lg:w-1/2"
-      style={{
-        backgroundImage: `url('${seoConfig.baseURL}dlinklogin.webp')`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
-    ></div>
-    <form  class="w-full p-8 lg:w-1/2">
-      <div class="flex text-2xl font-semibold justify-center">
-        D-link Shortener
-      </div>
-      <p class="text-center text-xl text-gray-600">Bienvenido!</p>
-      <a
-        href="/api/github"
-        class="mt-4  flex items-center justify-center rounded-lg text-white shadow-md hover:bg-gray-100"
+  <>
+    <div class="py-6">
+      <div
+        class="mx-auto flex max-w-sm overflow-hidden rounded-lg bg-white shadow-lg lg:max-w-4xl"
       >
-        <div class="px-4 py-3 text-gray-600">
-          <Icon name="mdi:github" size={24} />
-        </div>
-        <h1 class="w-5/6 px-4 py-3 text-center font-bold text-gray-600">
-          Iniciar sesion con Github
-        </h1>
-      </a>
-      <div class="mt-4 flex items-center justify-between">
-        <span class="w-1/5 border-b lg:w-1/4"></span>
-        <a
-          href="#"
-          class="text-center text-xs uppercase text-gray-500"
+        <div
+          class="hidden bg-cover lg:block lg:w-1/2"
+          style={{
+            backgroundImage: `url('${seoConfig.baseURL}dlinklogin.webp')`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
         >
-          o ingresa con tu correo
-        </a>
-        <span class="w-1/5 border-b lg:w-1/4"></span>
-      </div>
-      <div class="mt-4">
-        <label class="mb-2 block text-sm font-bold text-gray-700">
-          Direccion de correo electronico
-        </label>
-        <input
-          name="email"
-          disabled
-          class="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 py-2 px-4 text-gray-700 focus:outline-none"
-          type="email"
-        />
-      </div>
-      <div class="mt-4">
-        <div class="flex justify-between">
-          <label class="mb-2 block text-sm font-bold text-gray-700">
-            Contraseña
-          </label>
-          <a href="#" class="text-xs text-gray-500">
-            ¿Olvidaste tu contraseña?
-          </a>
         </div>
-        <input
-          name="password"
-          disabled
-          class="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 py-2 px-4 text-gray-700 focus:outline-none"
-          type="password"
-        />
+        <form class="w-full p-8 lg:w-1/2">
+          <div class="flex text-2xl font-semibold justify-center">UxLy</div>
+          <p class="text-center text-xl text-gray-600">Bienvenido!</p>
+          <a
+            href="/api/github"
+            class="mt-4 flex items-center justify-center rounded-lg text-white shadow-md hover:bg-gray-100"
+          >
+            <div class="px-4 py-3 text-gray-600">
+              <Icon name="mdi:github" size={24} />
+            </div>
+            <h1 class="w-5/6 px-4 py-3 text-center font-bold text-gray-600">
+              Iniciar sesion con Github
+            </h1>
+          </a>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="w-1/5 border-b lg:w-1/4"></span>
+            <a href="#" class="text-center text-xs uppercase text-gray-500">
+              o ingresa con tu correo
+            </a>
+            <span class="w-1/5 border-b lg:w-1/4"></span>
+          </div>
+          <div class="mt-4">
+            <label class="mb-2 block text-sm font-bold text-gray-700">
+              Direccion de correo electronico
+            </label>
+            <input
+              name="email"
+              disabled
+              class="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 py-2 px-4 text-gray-700 focus:outline-none"
+              type="email"
+            />
+          </div>
+          <div class="mt-4">
+            <div class="flex justify-between">
+              <label class="mb-2 block text-sm font-bold text-gray-700">
+                Contraseña
+              </label>
+              <a href="#" class="text-xs text-gray-500">
+                ¿Olvidaste tu contraseña?
+              </a>
+            </div>
+            <input
+              name="password"
+              disabled
+              class="focus:shadow-outline block w-full appearance-none rounded border border-gray-300 bg-gray-200 py-2 px-4 text-gray-700 focus:outline-none"
+              type="password"
+            />
+          </div>
+          <div class="mt-8">
+            <Button disabled>Ingresar</Button>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="w-1/5 border-b md:w-1/4"></span>
+            <a href="#" class="text-xs uppercase text-gray-500">
+              o registrate
+            </a>
+            <span class="w-1/5 border-b md:w-1/4"></span>
+          </div>
+          <a
+            href={"/"}
+            class="mt-3 flex items-end justify-center gap-1 text-2xl text-gray-500 hover:cursor-pointer hover:underline"
+          >
+            <Icon name="mdi:arrow-back-circle" /> volver al inicio
+          </a>
+        </form>
       </div>
-      <div class="mt-8">
-        <Button disabled>Ingresar</Button>
-      </div>
-      <div class="mt-4 flex items-center justify-between">
-        <span class="w-1/5 border-b md:w-1/4"></span>
-        <a href="#" class="text-xs uppercase text-gray-500">
-          o registrate
-        </a>
-        <span class="w-1/5 border-b md:w-1/4"></span>
-      </div>
-      <a
-        href={"/"}
-        class="mt-3 flex items-end justify-center gap-1 text-2xl text-gray-500 hover:cursor-pointer hover:underline"
-      >
-        <Icon name="mdi:arrow-back-circle"/> volver al inicio
-      </a>
-    </form>
-  </div>
-</div>
-</>
-</Layout>
-
+    </div>
+  </>
+</LayoutBlank>
