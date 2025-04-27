@@ -91,7 +91,7 @@ const StatusComponent = ({ status }: { status: Status }) => {
               target="_blank"
               className="decoration-wavy underline-offset-2 selection:bg-dark selection:text-light hover:font-bold hover:italic hover:underline"
             >
-              {seoConfig.baseURL}/{status.message}
+              {seoConfig.baseURL}{status.message}
             </a>
           </div>
         </div>
