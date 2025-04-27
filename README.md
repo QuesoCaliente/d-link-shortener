@@ -1,6 +1,6 @@
 <div align="center">
 
-# D-link Shortener
+# Uxly Shortener
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][fork-shield]][fork-url]
@@ -8,7 +8,7 @@
 
 </div>
 
-D-link Shortener es una herramienta gratuita para acortar una URL. Utilice nuestro acortador de URL para crear un enlace acortado que sea fácil de recordar. Comparta el enlace corto con otros.
+Uxly es una herramienta gratuita para acortar una URL. Utilice nuestro acortador de URL para crear un enlace acortado que sea fácil de recordar. Comparta el enlace corto con otros.
 
 ## Screenshots
 

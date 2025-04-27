@@ -1,67 +1,63 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import {LinkForm} from "@/components/react/LinkForm";
+import { LinkForm } from "@/components/react/LinkForm";
 
 if (Astro.request.method === "POST") {
-    const formData = await Astro.request.formData();
+  const formData = await Astro.request.formData();
 
-    const response = await fetch(`${Astro.url.origin}/api/link`, {
-        method: "POST",
-        body: formData,
-    });
-    if (response.ok) {
-        const data: {
-            url: string;
-            short: string;
-        
-        } = await response.json();
-        document.getElementById("shorturl")!.textContent = data.short;
-    }
-    
+  const response = await fetch(`${Astro.url.origin}/api/link`, {
+    method: "POST",
+    body: formData,
+  });
+  if (response.ok) {
+    const data: {
+      url: string;
+      short: string;
+    } = await response.json();
+    document.getElementById("shorturl")!.textContent = data.short;
+  }
 }
-
 ---
 
 <Layout
-title="D-link Shortener"
-description="D-link Shortener es una herramienta gratuita para acortar una URL. Utilice nuestro acortador de URL para crear un enlace acortado que sea fácil de recordar. Comparta el enlace corto con otros."
-
+  title="Uxly"
+  description="Uxly es una herramienta gratuita para acortar una URL. Utilice nuestro acortador de URL para crear un enlace acortado que sea fácil de recordar. Comparta el enlace corto con otros."
 >
-<main class="max-w-screen-xl sm:mx-auto my-20 mx-4">
+  <main class="max-w-screen-xl sm:mx-auto my-20 mx-4">
     <section class="hero">
-        <div class="container">
+      <div class="container">
         <div class="hero__content">
-            <h1 class="hero__title">D-link Shortener</h1>
-            <p class="hero__description">D-link Shortener es una herramienta gratuita para acortar una URL. Utilice nuestro acortador de URL para crear un enlace acortado que sea fácil de recordar. Comparta el enlace corto con otros.</p>
-            <LinkForm client:load />
+          <h1 class="hero__title">Uxly</h1>
+          <p class="hero__description">
+            Uxly es una herramienta gratuita para acortar una URL. Utilice
+            nuestro acortador de URL para crear un enlace acortado que sea fácil
+            de recordar. Comparta el enlace corto con otros.
+          </p>
+          <LinkForm client:load />
         </div>
-        </div>
+      </div>
     </section>
-</main>
+  </main>
 </Layout>
 
-
 <style>
-.hero {
+  .hero {
     @apply flex justify-center items-center w-full h-[80vh];
-}
+  }
 
-.hero__content {
+  .hero__content {
     text-align: center;
-}
+  }
 
-.hero__title {
+  .hero__title {
     font-size: 2.5rem;
     font-weight: 700;
     color: #333;
-}
+  }
 
-.hero__description {
+  .hero__description {
     font-size: 1.25rem;
     color: #333;
     margin-top: 1rem;
-}
-
-
-
+  }
 </style>
